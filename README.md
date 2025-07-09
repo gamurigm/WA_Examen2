@@ -154,4 +154,4 @@ docker run --name mi-imc-container -d -p 8080:80 tuusuario/imc-angular
 > Si tienes dudas, busca en la documentación oficial de Docker o pregunta a tu profesor.
 
 ## 👤 Autor
-Gabriel Murillo
+Gabriel Murillo.
