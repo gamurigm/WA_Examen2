@@ -28,17 +28,49 @@ Esta aplicación permite calcular el Índice de Masa Corporal (IMC) de forma int
    ```
 3. Abre en tu navegador: [http://localhost:4200](http://localhost:4200)
 
-## 🐳 Docker
+## 🐳 Docker: Uso detallado
 
-### 🏗️ Construir la imagen
+Esta app está lista para ejecutarse en un contenedor Docker usando NGINX como servidor web. A continuación se explica el proceso completo:
+
+### 📄 ¿Qué es el Dockerfile?
+El `Dockerfile` contiene las instrucciones para construir la imagen de la aplicación Angular y servirla con NGINX. No se ejecuta directamente, sino que Docker lo usa para crear la imagen.
+
+### 🏗️ 1. Construir la imagen localmente (ejecutar el Dockerfile)
+Ubícate en la raíz del proyecto (donde está el Dockerfile) y ejecuta:
 ```bash
-docker build -t tuusuario/imc-angular .
+docker build -t imc-angular .
+```
+Esto crea una imagen llamada `imc-angular`.
+
+### 🏷️ 2. Etiquetar la imagen (si es necesario)
+Si necesitas cambiar el nombre para Docker Hub:
+```bash
+docker tag imc-angular ryusakizeitan/imc-angular
 ```
 
-### ▶️ Ejecutar el contenedor
+### 🔑 3. Iniciar sesión en Docker Hub
 ```bash
-docker run -d -p 8080:80 tuusuario/imc-angular
+docker login
 ```
+
+### ⬆️ 4. Subir la imagen a Docker Hub
+```bash
+docker push ryusakizeitan/imc-angular
+```
+
+### ▶️ 5. Usar la imagen desde cualquier máquina
+Si la imagen ya está en Docker Hub, puedes descargarla y ejecutarla directamente con:
+```bash
+docker run -d -p 8080:80 ryusakizeitan/imc-angular
+```
+La aplicación estará disponible en [http://localhost:8080](http://localhost:8080)
+
+---
+
+**Notas:**
+- Cambia el nombre de usuario si usas otro usuario de Docker Hub.
+- Asegúrate de tener Docker instalado y en funcionamiento.
+- El Dockerfile utiliza multi-stage build: primero compila Angular y luego sirve el resultado con NGINX usando el archivo `nginx.conf` personalizado.
 
 ## 👤 Autor
 Gabriel Murillo
