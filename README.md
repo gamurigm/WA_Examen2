@@ -10,6 +10,12 @@ Esta aplicación permite calcular el Índice de Masa Corporal (IMC) de forma int
 - Diseño moderno, responsivo y tipo app.
 - Botón para reiniciar el peso a 40 kg.
 
+## Significado de los colores de fondo
+- **Azul**: Bajo peso (IMC &lt; 18.5)
+- **Verde**: Normal (IMC 18.5 - 24.9)
+- **Naranja**: Sobrepeso (IMC 25 - 29.9)
+- **Rojo**: Obesidad (IMC ≥ 30)
+
 ## Cómo ejecutar localmente
 
 1. Instala las dependencias:
