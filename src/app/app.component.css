@@ -1,0 +1,112 @@
+```css
+.imc-card {
+  background: #fff;
+  border-radius: 1.5rem;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.10);
+  padding: 2.5rem 2rem;
+  max-width: 400px;
+  margin: 2rem auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  transition: box-shadow 0.3s;
+}
+
+.imc-card h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: #222;
+}
+
+.inputs-row {
+  display: flex;
+  gap: 1.5rem;
+  width: 100%;
+  justify-content: center;
+}
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.input-btns {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.input-btns button {
+  background: #4caf50;
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 2.2rem;
+  height: 2.2rem;
+  font-size: 1.3rem;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.input-btns button:hover {
+  background: #388e3c;
+}
+
+.input-btns input {
+  width: 3.5rem;
+  text-align: center;
+  font-size: 1.1rem;
+  border: 1px solid #ccc;
+  border-radius: 0.5rem;
+  padding: 0.3rem 0.5rem;
+}
+
+.input-group input[type="number"] {
+  width: 4.5rem;
+  text-align: center;
+  font-size: 1.1rem;
+  border: 1px solid #ccc;
+  border-radius: 0.5rem;
+  padding: 0.3rem 0.5rem;
+}
+
+.result-row {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.imc-value, .imc-category {
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+
+.reset-btn {
+  background: #2196f3;
+  color: #fff;
+  border: none;
+  border-radius: 1rem;
+  padding: 0.6rem 1.5rem;
+  font-size: 1rem;
+  cursor: pointer;
+  margin-top: 1rem;
+  transition: background 0.2s;
+}
+.reset-btn:hover {
+  background: #1565c0;
+}
+
+@media (max-width: 600px) {
+  .imc-card {
+    padding: 1.2rem 0.5rem;
+  }
+  .inputs-row {
+    flex-direction: column;
+    gap: 1rem;
+  }
+}
+```
