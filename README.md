@@ -72,9 +72,86 @@ La aplicación estará disponible en [http://localhost:8080](http://localhost:80
 - Asegúrate de tener Docker instalado y en funcionamiento.
 - El Dockerfile utiliza multi-stage build: primero compila Angular y luego sirve el resultado con NGINX usando el archivo `nginx.conf` personalizado.
 
-## 👤 Autor
-Gabriel Murillo
+## 🐳 Guía Docker para principiantes
+
+A continuación tienes una guía paso a paso para crear, subir, descargar y ejecutar la imagen Docker de esta app, pensada para alguien sin experiencia previa:
+
+### 1. Instalar Docker
+- Descarga e instala Docker Desktop desde: https://www.docker.com/products/docker-desktop/
+- Abre Docker Desktop y asegúrate de que esté corriendo.
+
+### 2. Construir la imagen Docker (local)
+Abre una terminal (PowerShell) y navega a la carpeta del proyecto donde está el Dockerfile:
+```powershell
+cd "C:\ruta\a\tu\proyecto"
+```
+Luego ejecuta:
+```powershell
+docker build -t imc-angular .
+```
+Esto creará una imagen llamada `imc-angular`.
+
+### 3. Crear y ejecutar el contenedor
+Para crear y ejecutar el contenedor en segundo plano:
+```powershell
+docker run --name mi-imc-container -d -p 8080:80 imc-angular
+```
+Abre tu navegador y entra a: [http://localhost:8080](http://localhost:8080)
+
+### 4. Subir la imagen a Docker Hub (opcional)
+Primero inicia sesión:
+```powershell
+docker login
+```
+Luego etiqueta la imagen (si es necesario):
+```powershell
+docker tag imc-angular tuusuario/imc-angular
+```
+Y súbela:
+```powershell
+docker push tuusuario/imc-angular
+```
+
+### 5. Descargar y ejecutar la imagen desde Docker Hub (en otra PC)
+En cualquier máquina con Docker instalado:
+```powershell
+docker pull tuusuario/imc-angular
+```
+Luego ejecuta:
+```powershell
+docker run --name mi-imc-container -d -p 8080:80 tuusuario/imc-angular
+```
+
+### 6. Comandos útiles
+- Ver contenedores en ejecución:
+  ```powershell
+  docker ps
+  ```
+- Ver todas las imágenes:
+  ```powershell
+  docker images
+  ```
+- Ver logs del contenedor:
+  ```powershell
+  docker logs mi-imc-container
+  ```
+- Detener el contenedor:
+  ```powershell
+  docker stop mi-imc-container
+  ```
+- Eliminar el contenedor:
+  ```powershell
+  docker rm mi-imc-container
+  ```
+- Eliminar la imagen:
+  ```powershell
+  docker rmi imc-angular
+  ```
 
 ---
 
-> Cambia `tuusuario` por tu usuario real de Docker Hub si vas a publicar la imagen.
+> Cambia `tuusuario` por tu usuario real de Docker Hub.
+> Si tienes dudas, busca en la documentación oficial de Docker o pregunta a tu profesor.
+
+## 👤 Autor
+Gabriel Murillo
